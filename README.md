@@ -23,13 +23,9 @@ We run:
 
 • Technical workshops
 
-• Interview prep sessions
-
 • Project-based learning
 
 • Industry networking events
-
-• Social impact tech initiatives
 
 
 If you enjoyed this workshop, come to more ACM events!
@@ -53,8 +49,6 @@ By the end of this workshop, you will know how to:
 • Build modular functions
 
 • Save results into a CSV dataset
-
-• Apply basic ethical scraping practices
 
 
 ------------------------------------------------------------
