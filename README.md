@@ -95,8 +95,6 @@ python3 --version
 pip3 --version
 
 ------------------------------------------------------------
-
-------------------------------------------------------------
 3.2 CLONE THE GITHUB REPOSITORY
 ------------------------------------------------------------
 
@@ -131,11 +129,11 @@ Step 2 — Clone the repository.
 
 Open Terminal (Mac) or Command Prompt (Windows) and run:
 
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+git clone https://github.com/adisharm-oss/ACM-BooksScraper-Workshop.git
 
 Then enter the project folder:
 
-cd YOUR-REPO-NAME
+cd ACM-BooksScraper-Workshop
 
 ------------------------------------------------------------
 
