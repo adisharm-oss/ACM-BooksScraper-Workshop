@@ -19,6 +19,7 @@ so you can follow along live and easily jump to sections if you get lost.
 ACM @ UMD is one of the largest technical student organizations on campus.
 
 We run:
+
 • Technical workshops
 
 • Interview prep sessions
