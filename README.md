@@ -20,6 +20,7 @@ ACM @ UMD is one of the largest technical student organizations on campus.
 
 We run:
 
+
 • Technical workshops
 
 • Interview prep sessions
