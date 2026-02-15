@@ -96,20 +96,59 @@ pip3 --version
 
 ------------------------------------------------------------
 
-3.2 Create a Virtual Environment
+------------------------------------------------------------
+3.2 CLONE THE GITHUB REPOSITORY
+------------------------------------------------------------
 
+There are two ways to get the workshop code.
 
-Windows:
-python -m venv .venv
-.venv\Scripts\activate
+------------------------------------------------------------
 
+Option A — Download ZIP (Simplest)
 
-Mac:
-python3 -m venv .venv
-source .venv/bin/activate
+1. Go to the GitHub repository page.
+2. Click the green "Code" button.
+3. Click "Download ZIP".
+4. Extract the folder.
+5. Open it in VS Code.
 
+------------------------------------------------------------
 
-You should now see (.venv) in your terminal.
+Option B — Clone Using Git (Recommended)
+
+Step 1 — Make sure Git is installed.
+
+Download Git from:
+https://git-scm.com/downloads
+
+Verify installation:
+
+git --version
+
+------------------------------------------------------------
+
+Step 2 — Clone the repository.
+
+Open Terminal (Mac) or Command Prompt (Windows) and run:
+
+git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+
+Then enter the project folder:
+
+cd YOUR-REPO-NAME
+
+------------------------------------------------------------
+
+Step 3 — Open in VS Code
+
+code .
+
+(If 'code' does not work, open VS Code manually and use:
+File → Open Folder)
+
+------------------------------------------------------------
+
+You are now inside the workshop project folder.
 
 ------------------------------------------------------------
 
