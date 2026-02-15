@@ -21,7 +21,7 @@ SETUP INSTRUCTIONS
 
 1. Clone this repository:
 
-   git clone https://github.com/YOUR-USERNAME/ACM-BooksScraper-Workshop.git
+   git clone https://github.com/adisharm-oss/ACM-BooksScraper-Workshop.git
    cd ACM-BooksScraper-Workshop
 
 2. Install dependencies:
