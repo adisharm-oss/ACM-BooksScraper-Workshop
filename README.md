@@ -40,9 +40,13 @@ WHAT YOU WILL BUILD
 By the end of this workshop, you will have:
 
 • Scraped book titles and prices
+
 • Crawled the first 5 pages
+
 • Generated a CSV dataset
+
 • Learned responsible scraping practices
+
 
 ----------------------------------------
 FOLDER STRUCTURE
