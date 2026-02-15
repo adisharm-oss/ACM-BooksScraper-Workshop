@@ -1,13 +1,13 @@
 """
 ACM @ UMD — Web Scraping Workshop
-Starter Scraper (Scaffold Version)
+Starter Scraper (Balanced Build Version)
 
-This file is intentionally incomplete.
-We will implement the missing parts together.
+This version contains structure and flow,
+but core scraping logic must be implemented during the workshop.
 """
 
 # ======================================
-# STEP 1 — IMPORT LIBRARIES
+# STEP 1 — IMPORT LIBRARIES (Already Provided)
 # ======================================
 
 import requests
@@ -17,10 +17,11 @@ import time
 
 
 # ======================================
-# STEP 2 — BASE URL
+# STEP 2 — BASE CONFIGURATION (Already Provided)
 # ======================================
 
 BASE_URL = "https://books.toscrape.com/catalogue/page-{}.html"
+OUTPUT_PATH = "books.csv"
 
 
 # ======================================
@@ -29,24 +30,26 @@ BASE_URL = "https://books.toscrape.com/catalogue/page-{}.html"
 
 def fetch_page(page_number):
     """
-    Sends a request to a specific page number.
-    Returns BeautifulSoup object.
+    Sends a request to a specific page.
+    Returns BeautifulSoup object or None.
     """
+
+    # Format URL (already done)
     url = BASE_URL.format(page_number)
 
-    # TODO:
+    # TODO (YOU IMPLEMENT):
     # 1. Send request using requests.get()
-    # 2. Check status code
-    # 3. Return BeautifulSoup object
+    # 2. Add timeout=10
+    # 3. Check status code
+    # 4. If not 200 → print warning + return None
 
-    response = requests.get(url)
+    response = None  # <-- replace this
 
-    if response.status_code != 200:
-        print(f"Failed to fetch page {page_number}")
-        return None
+    # TODO: Add status code check here
 
-    soup = BeautifulSoup(response.text, "html.parser")
-    return soup
+    # TODO: Return BeautifulSoup(response.text, "html.parser")
+
+    pass  # remove once implemented
 
 
 # ======================================
@@ -55,42 +58,35 @@ def fetch_page(page_number):
 
 def extract_books(soup):
     """
-    Takes a BeautifulSoup object.
+    Extracts Title and Price from a parsed page.
     Returns a list of dictionaries.
     """
+
     books_data = []
 
-    # TODO:
-    # 1. Find all book containers
+    # TODO (YOU IMPLEMENT):
+    # 1. Find all <article class="product_pod">
     # 2. Loop through each book
-    # 3. Extract title
-    # 4. Extract price
-    # 5. Append to books_data list
+    # 3. Extract:
+    #       - title
+    #       - price
+    # 4. Append dictionary to books_data
 
-    books = soup.find_all("article", class_="product_pod")
-
-    for book in books:
-        title = book.h3.a["title"]
-        price = book.find("p", class_="price_color").text
-
-        books_data.append({
-            "Title": title,
-            "Price": price
-        })
+    # HINT:
+    # books = soup.find_all("article", class_="product_pod")
 
     return books_data
 
 
 # ======================================
-# STEP 5 — MAIN SCRAPER LOOP
+# STEP 5 — MAIN SCRAPER LOGIC (Mostly Built)
 # ======================================
 
 def main():
+
     all_books = []
 
-    # TODO:
-    # Loop through first 5 pages
-
+    # Pagination loop already provided
     for page in range(1, 6):
         print(f"Scraping page {page}...")
 
@@ -102,27 +98,21 @@ def main():
         page_books = extract_books(soup)
         all_books.extend(page_books)
 
-        # Ethical scraping — rate limiting
-        time.sleep(1)
-
-    # ======================================
-    # STEP 6 — SAVE TO CSV
-    # ======================================
+        # TODO (YOU IMPLEMENT):
+        # Add ethical rate limiting here
 
     if not all_books:
-        print("No books scraped.")
+        print("No books scraped. Exiting.")
         return
 
     df = pd.DataFrame(all_books)
 
-    # TODO:
-    # Make sure data folder exists
-    # Save CSV file
-
-    df.to_csv("data/books.csv", index=False)
+    # TODO (YOU IMPLEMENT):
+    # Save DataFrame to CSV using OUTPUT_PATH
 
     print("\nScraping complete!")
     print(f"Total books scraped: {len(all_books)}")
+    print(f"Data saved to: {OUTPUT_PATH}")
 
 
 # ======================================
