@@ -143,8 +143,77 @@ File → Open Folder)
 You are now inside the workshop project folder.
 
 ------------------------------------------------------------
+3.3 CREATE A PYTHON VIRTUAL ENVIRONMENT
+------------------------------------------------------------
 
-3.3 Install Dependencies
+Why Use a Virtual Environment?
+
+A virtual environment keeps this project’s dependencies isolated 
+from your global Python installation.
+
+This prevents version conflicts and keeps your system clean.
+
+Think of it as a sandbox just for this project.
+
+------------------------------------------------------------
+
+Step 1 — Make Sure You Are Inside the Project Folder
+
+If you cloned the repository:
+
+cd ACM-BooksScraper-Workshop
+
+------------------------------------------------------------
+
+Step 2 — Create the Virtual Environment
+
+Mac:
+
+python3 -m venv venv
+
+Windows:
+
+python -m venv venv
+
+This creates a folder named "venv" inside your project.
+
+------------------------------------------------------------
+
+Step 3 — Activate the Virtual Environment
+
+Mac:
+
+source venv/bin/activate
+
+Windows:
+
+venv\Scripts\activate
+
+If successful, you will see:
+
+(venv)
+
+at the beginning of your terminal line.
+
+That means your virtual environment is active.
+
+------------------------------------------------------------
+
+Step 4 — Upgrade pip (Optional but Recommended)
+
+python -m pip install --upgrade pip
+
+------------------------------------------------------------
+
+Step 5 — Deactivate (When Finished)
+
+To exit the virtual environment later, run:
+
+deactivate
+
+------------------------------------------------------------
+
+3.4 Install Dependencies
 
 
 pip install -r requirements.txt
@@ -292,45 +361,15 @@ Solution uses:
 books.csv
 
 ------------------------------------------------------------
-5. ETHICAL SCRAPING PRINCIPLES
-------------------------------------------------------------
-
-5.1 Always Check robots.txt
-https://books.toscrape.com/robots.txt
-
-5.2 Use Rate Limiting
-
-5.3 Avoid scraping:
-
-• Login pages
-
-• Personal data
-
-• Private dashboards
-
-------------------------------------------------------------
-6. EXTENSIONS
+5. EXTENSIONS
 ------------------------------------------------------------
 
 Try adding:
 • Book rating extraction
-• Availability extraction
 • Scrape all 50 pages
-• Export to JSON
-• Perform price analysis
 
 ------------------------------------------------------------
-7. RUN COMMANDS
-------------------------------------------------------------
-
-Starter:
-python starter_code/scraper.py
-
-Solution:
-python solution_code/solution_scraper.py
-
-------------------------------------------------------------
-8. WHAT YOU BUILT
+6. WHAT YOU BUILT
 ------------------------------------------------------------
 
 You:
