@@ -1,9 +1,7 @@
 """
 ACM @ UMD — Web Scraping Workshop
-Starter Scraper (Balanced Build Version)
+Starter Scraper
 
-This version contains structure and flow,
-but core scraping logic must be implemented during the workshop.
 """
 
 # ======================================
@@ -29,15 +27,10 @@ OUTPUT_PATH = "books.csv"
 # ======================================
 
 def fetch_page(page_number):
-    """
-    Sends a request to a specific page.
-    Returns BeautifulSoup object or None.
-    """
-
     # Format URL (already done)
     url = BASE_URL.format(page_number)
 
-    # TODO (YOU IMPLEMENT):
+    # TODO:
     # 1. Send request using requests.get()
     # 2. Add timeout=10
     # 3. Check status code
@@ -79,35 +72,24 @@ def extract_books(soup):
 
 
 # ======================================
-# STEP 5 — MAIN SCRAPER LOGIC (Mostly Built)
+# STEP 5 — MAIN SCRAPER LOGIC
 # ======================================
 
 def main():
 
     all_books = []
 
-    # Pagination loop already provided
-    for page in range(1, 6):
-        print(f"Scraping page {page}...")
-
-        soup = fetch_page(page)
-
-        if soup is None:
-            continue
-
-        page_books = extract_books(soup)
-        all_books.extend(page_books)
+    # Implement the loop
 
         # TODO (YOU IMPLEMENT):
         # Add ethical rate limiting here
 
     if not all_books:
-        print("No books scraped. Exiting.")
-        return
+        #Implement what happens if no books are scraped.
 
     df = pd.DataFrame(all_books)
 
-    # TODO (YOU IMPLEMENT):
+    # TODO:
     # Save DataFrame to CSV using OUTPUT_PATH
 
     print("\nScraping complete!")
